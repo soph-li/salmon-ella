@@ -1,0 +1,8 @@
+res://scenes/world.tscn
+res://scripts/gofish.gd
+res://scenes/menu.tscn
+res://scenes/intro.tscn
+res://scenes/tasks.tscn
+res://scenes/ella_intro.tscn
+res://scenes/text_box.tscn
+res://scenes/gofish.tscn

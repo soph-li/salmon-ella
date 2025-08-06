@@ -19,3 +19,15 @@ Thumbs.db
 # Editor files
 .vscode/
 .idea/
+
+# Additional cache
+*.cfg
+*.ctex
+*.md5
+*.Node
+*.scn
+*.fontdata
+*.mp3str
+*.sample
+*.meta 
+*.bin
