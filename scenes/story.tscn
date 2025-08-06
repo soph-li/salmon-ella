@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5wegsv0jubs8"]
+
+[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_aiafr"]
+
+[node name="story" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="dialog_box" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 328.0
+offset_bottom = 56.0
+script = ExtResource("1_aiafr")
+
+[node name="name" type="RichTextLabel" parent="dialog_box"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="text" type="RichTextLabel" parent="dialog_box"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="dialog_box"]
+
+[node name="indicator" type="Polygon2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="indicator"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,308 @@
+[gd_scene load_steps=40 format=3 uid="uid://mksddmpr1mim"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_08e0q"]
+[ext_resource type="PackedScene" uid="uid://chwqyjlai5rt6" path="res://scenes/ella.tscn" id="1_56b40"]
+[ext_resource type="Script" path="res://scripts/ella.gd" id="2_5rf35"]
+[ext_resource type="Texture2D" uid="uid://dem4raupod7ro" path="res://art/watergift/frame_00_delay-0.15s.png" id="3_a4nvh"]
+[ext_resource type="Texture2D" uid="uid://bpmyn1gnvhsat" path="res://art/watergift/frame_01_delay-0.15s.png" id="4_eagpo"]
+[ext_resource type="Script" path="res://scripts/music_lullaby.gd" id="4_fed0i"]
+[ext_resource type="PackedScene" uid="uid://20tjutbo63gu" path="res://scenes/gofish.tscn" id="5_11csp"]
+[ext_resource type="Texture2D" uid="uid://emv7mwu1k4o8" path="res://art/watergift/frame_02_delay-0.15s.png" id="5_t25jl"]
+[ext_resource type="Texture2D" uid="uid://bbt1it6c88ad1" path="res://art/watergift/frame_03_delay-0.15s.png" id="6_wa1b2"]
+[ext_resource type="Texture2D" uid="uid://c4b4g0gkvkuwe" path="res://art/watergift/frame_04_delay-0.15s.png" id="7_iecs3"]
+[ext_resource type="Texture2D" uid="uid://dy6dccpnpoc6n" path="res://art/watergift/frame_05_delay-0.15s.png" id="8_618t3"]
+[ext_resource type="Texture2D" uid="uid://cra6eqf0rpwqa" path="res://art/watergift/frame_06_delay-0.15s.png" id="9_qxyc4"]
+[ext_resource type="Texture2D" uid="uid://c3x1m2j7dkx80" path="res://art/watergift/frame_07_delay-0.15s.png" id="10_x0udy"]
+[ext_resource type="Texture2D" uid="uid://bt320nadj301h" path="res://art/watergift/frame_08_delay-0.15s.png" id="11_eknjn"]
+[ext_resource type="Texture2D" uid="uid://dwxo1pk1jxnd4" path="res://art/watergift/frame_09_delay-0.15s.png" id="12_5yku8"]
+[ext_resource type="Texture2D" uid="uid://cthpjo2andtwl" path="res://art/watergift/frame_10_delay-0.15s.png" id="13_bw24u"]
+[ext_resource type="Texture2D" uid="uid://c05slqfqxam3g" path="res://art/watergift/frame_11_delay-0.15s.png" id="14_qvqo3"]
+[ext_resource type="Texture2D" uid="uid://7lxou20sw20o" path="res://art/transparent2.png" id="15_bvubp"]
+[ext_resource type="Script" path="res://scripts/ella_speech.gd" id="16_horcm"]
+[ext_resource type="AudioStream" uid="uid://cdxncsvt0vmdm" path="res://audio/sillyshark.mp3" id="18_d2lfn"]
+[ext_resource type="Texture2D" uid="uid://orhuie45vg81" path="res://art/volumepiskel.png" id="21_gb21h"]
+[ext_resource type="FontFile" uid="uid://cieco37v4snpg" path="res://fonts!/PeaberryBase.ttf" id="22_ou5md"]
+[ext_resource type="PackedScene" uid="uid://cf5fjghhcaw42" path="res://scenes/tasks.tscn" id="23_i4k07"]
+[ext_resource type="Texture2D" uid="uid://8i7x8qggmkf2" path="res://art/freepixelfish/freefish09.png" id="24_8kc10"]
+[ext_resource type="Texture2D" uid="uid://ctse0ot5wu2hb" path="res://art/home_button.png" id="24_msm4d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_508sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a4nvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eagpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t25jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wa1b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iecs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_618t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qxyc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x0udy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eknjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5yku8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bw24u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qvqo3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_rsyr8"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("gradient:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(4, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gradient:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gradient:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1500, -624), Vector2(-6000, -624)]
+}
+
+[sub_resource type="Animation" id="Animation_7xhn6"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gradient:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.02, 1), Vector2(5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gradient:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2isw"]
+_data = {
+"fade_in": SubResource("Animation_rsyr8"),
+"fade_out": SubResource("Animation_7xhn6")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgpy0"]
+atlas = ExtResource("21_gb21h")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byw5t"]
+atlas = ExtResource("21_gb21h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0uyw"]
+atlas = ExtResource("21_gb21h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2shu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgpy0")
+}],
+"loop": false,
+"name": &"high_vol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byw5t")
+}],
+"loop": false,
+"name": &"low_vol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0uyw")
+}],
+"loop": false,
+"name": &"mute",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3jpxf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttcfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfkwm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_loh4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb4fb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlohc"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_08e0q")
+
+[node name="serene" type="AnimatedSprite2D" parent="."]
+position = Vector2(36.5, 4.75003)
+scale = Vector2(4.018, 4.394)
+sprite_frames = SubResource("SpriteFrames_508sh")
+frame_progress = 0.484756
+
+[node name="ella" parent="." instance=ExtResource("1_56b40")]
+visible = false
+scale = Vector2(10, 10)
+script = ExtResource("2_5rf35")
+
+[node name="ella_speech" type="Sprite2D" parent="."]
+position = Vector2(0, -252)
+script = ExtResource("16_horcm")
+
+[node name="dj" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_d2lfn")
+autoplay = true
+script = ExtResource("4_fed0i")
+
+[node name="gradient" type="TextureRect" parent="."]
+offset_left = -4154.0
+offset_top = -624.0
+offset_right = 2517.0
+offset_bottom = 626.0
+pivot_offset = Vector2(1281, 625)
+texture = ExtResource("15_bvubp")
+flip_h = true
+
+[node name="gofish" parent="." instance=ExtResource("5_11csp")]
+position = Vector2(473, 39)
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s2isw")
+}
+
+[node name="volume" type="AnimatedSprite2D" parent="."]
+position = Vector2(-822, -417)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_2shu0")
+animation = &"high_vol"
+
+[node name="now playing" type="Label" parent="."]
+offset_left = -755.0
+offset_top = -461.0
+offset_right = 119.0
+offset_bottom = -391.0
+theme_override_fonts/font = ExtResource("22_ou5md")
+theme_override_font_sizes/font_size = 40
+text = "now playing: silly shark vibes"
+
+[node name="volume_button" type="Button" parent="."]
+offset_left = -864.0
+offset_top = -486.0
+offset_right = -772.0
+offset_bottom = -397.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3jpxf")
+flat = true
+
+[node name="home" type="Sprite2D" parent="."]
+position = Vector2(845, -449)
+scale = Vector2(10.1667, 10.1667)
+texture = ExtResource("24_msm4d")
+
+[node name="tasks" parent="." instance=ExtResource("23_i4k07")]
+position = Vector2(-798, 334)
+scale = Vector2(0.75, 0.75)
+
+[node name="home_button" type="Button" parent="."]
+offset_left = 804.0
+offset_top = -491.0
+offset_right = 886.0
+offset_bottom = -416.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ttcfw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qfkwm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_loh4n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rb4fb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xlohc")
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="goldfish" type="Sprite2D" parent="."]
+position = Vector2(714, 453)
+scale = Vector2(5, 5)
+texture = ExtResource("24_8kc10")
+
+[node name="x" type="Label" parent="."]
+offset_left = 763.0
+offset_top = 429.0
+offset_right = 803.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0.27451, 0.403922, 1, 1)
+theme_override_fonts/font = ExtResource("22_ou5md")
+theme_override_font_sizes/font_size = 50
+text = "x"
+
+[node name="count" type="Label" parent="."]
+offset_left = 817.0
+offset_top = 421.0
+offset_right = 875.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0.27451, 0.403922, 1, 1)
+theme_override_fonts/font = ExtResource("22_ou5md")
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[connection signal="pressed" from="volume_button" to="." method="_on_volume_button_pressed"]
+[connection signal="pressed" from="home_button" to="." method="_on_home_button_pressed"]

@@ -1,0 +1,208 @@
+[gd_scene load_steps=25 format=3 uid="uid://d1a4wvfwk2nf1"]
+
+[ext_resource type="PackedScene" uid="uid://dyubsmbl7lfxi" path="res://scenes/ella_intro.tscn" id="1_3yh0e"]
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_wewtd"]
+[ext_resource type="AudioStream" uid="uid://bxai0hdv0wwnj" path="res://audio/animalcrossingspeech.mp3" id="3_qvfad"]
+[ext_resource type="Texture2D" uid="uid://7lxou20sw20o" path="res://art/transparent2.png" id="3_uia8u"]
+[ext_resource type="Texture2D" uid="uid://h7741w0at72k" path="res://art/beachgift/frame_00_delay-0.2s.png" id="5_7hn0v"]
+[ext_resource type="Texture2D" uid="uid://bwhpnc3wvxkbw" path="res://art/beachgift/frame_01_delay-0.2s.png" id="6_whu3t"]
+[ext_resource type="Texture2D" uid="uid://cqqsp3ht2pvf1" path="res://art/beachgift/frame_02_delay-0.2s.png" id="7_w2dx5"]
+[ext_resource type="Texture2D" uid="uid://b5frltghkm788" path="res://art/beachgift/frame_03_delay-0.2s.png" id="8_3ktap"]
+[ext_resource type="Texture2D" uid="uid://b1h307t12485v" path="res://art/beachgift/frame_04_delay-0.2s.png" id="9_wbfoj"]
+[ext_resource type="Texture2D" uid="uid://crs17bj8lu546" path="res://art/beachgift/frame_05_delay-0.2s.png" id="10_6etbt"]
+[ext_resource type="Texture2D" uid="uid://53jjgsm7dg7j" path="res://art/beachgift/frame_06_delay-0.2s.png" id="11_y8xs5"]
+[ext_resource type="Texture2D" uid="uid://dix0w37a2jahk" path="res://art/beachgift/frame_07_delay-0.2s.png" id="12_00kwq"]
+[ext_resource type="Texture2D" uid="uid://dmqgt2q8c8775" path="res://art/beachgift/frame_08_delay-0.2s.png" id="13_6lurp"]
+[ext_resource type="Texture2D" uid="uid://bvv5m757tge6u" path="res://art/beachgift/frame_09_delay-0.2s.png" id="14_8p0ny"]
+[ext_resource type="FontFile" uid="uid://cieco37v4snpg" path="res://fonts!/PeaberryBase.ttf" id="15_qqfii"]
+[ext_resource type="Script" path="res://scripts/gramps.gd" id="16_3gx5d"]
+
+[sub_resource type="Animation" id="Animation_rsyr8"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("gradient:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(4, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gradient:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gradient:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1500, -624), Vector2(-6000, -624)]
+}
+
+[sub_resource type="Animation" id="Animation_7xhn6"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gradient:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.02, 1), Vector2(5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gradient:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2isw"]
+_data = {
+"fade_in": SubResource("Animation_rsyr8"),
+"fade_out": SubResource("Animation_7xhn6")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhml0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7hn0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_whu3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w2dx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3ktap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wbfoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6etbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y8xs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_00kwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6lurp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8p0ny")
+}],
+"loop": true,
+"name": &"crab",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcuce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnstv"]
+bg_color = Color(1, 0.470588, 0.584314, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijisp"]
+bg_color = Color(0.356863, 0.337255, 0.917647, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gar1b"]
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_wewtd")
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s2isw")
+}
+
+[node name="ella_talk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qvfad")
+
+[node name="beachweek" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.99992, -3.99998)
+scale = Vector2(4.51163, 4.575)
+sprite_frames = SubResource("SpriteFrames_vhml0")
+animation = &"crab"
+
+[node name="gradient" type="TextureRect" parent="."]
+offset_left = -4935.0
+offset_top = -624.0
+offset_right = 1736.0
+offset_bottom = 626.0
+pivot_offset = Vector2(1281, 625)
+texture = ExtResource("3_uia8u")
+flip_h = true
+
+[node name="ella_intro" parent="." instance=ExtResource("1_3yh0e")]
+position = Vector2(-752, 327)
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-966, -22, -659, 5, -564, 47, -483, 76, -199, 169, -162, 179, -37, 243, 38, 305, 430, 359, 616, 384, 770, 539, -963, 538, -961, -19, -969, -19, -974, -22, -1167, 322, -1069, 687, -244, 686, 931, 694, 857, 54, -157, -65, -1075, -140, -1051, -4, -973, -32, -969, -19)
+
+[node name="skipshad" type="Label" parent="."]
+offset_left = 685.0
+offset_top = 396.0
+offset_right = 919.0
+offset_bottom = 479.0
+theme_override_colors/font_color = Color(1, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("15_qqfii")
+theme_override_font_sizes/font_size = 80
+text = "skip.
+"
+
+[node name="skip" type="Button" parent="."]
+offset_left = 681.0
+offset_top = 390.0
+offset_right = 896.0
+offset_bottom = 470.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("15_qqfii")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wcuce")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jnstv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ijisp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gar1b")
+text = "skip.
+"
+
+[node name="gramps" type="Sprite2D" parent="."]
+position = Vector2(0, -56)
+script = ExtResource("16_3gx5d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -4)
+
+[connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]

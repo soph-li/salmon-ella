@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://20tjutbo63gu"]
+
+[ext_resource type="Script" path="res://scripts/gofish.gd" id="1_nwlh5"]
+[ext_resource type="Texture2D" uid="uid://cfjbdpqnxiu41" path="res://art/Almighty White Pixel.png" id="2_6jgpp"]
+[ext_resource type="Texture2D" uid="uid://4qo6ihlswdc6" path="res://art/fish.png" id="3_gbbhi"]
+[ext_resource type="Texture2D" uid="uid://wnj461lyi6h6" path="res://art/White Bar.png" id="4_f1jbp"]
+[ext_resource type="Texture2D" uid="uid://c14q0eicjs2uh" path="res://art/freepixelfish/freefish01.png" id="4_t0ybk"]
+[ext_resource type="Texture2D" uid="uid://djipiepkv34gr" path="res://art/freepixelfish/freefish14.png" id="5_fb2x5"]
+[ext_resource type="Texture2D" uid="uid://bmcsv3s7vcs2d" path="res://art/White Bar Border.png" id="5_k15ia"]
+[ext_resource type="Texture2D" uid="uid://vgt8kry4tbi2" path="res://art/freepixelfish/freefish11.png" id="6_m1wgd"]
+[ext_resource type="Texture2D" uid="uid://be3sshi6ykgbh" path="res://art/freepixelfish/freefish07.png" id="7_2rn7c"]
+[ext_resource type="Texture2D" uid="uid://8i7x8qggmkf2" path="res://art/freepixelfish/freefish09.png" id="8_y2e5g"]
+[ext_resource type="FontFile" uid="uid://cieco37v4snpg" path="res://fonts!/PeaberryBase.ttf" id="11_awsde"]
+[ext_resource type="Texture2D" uid="uid://d1on262bi3rue" path="res://art/progress-bar-circle.png" id="12_iin33"]
+[ext_resource type="Texture2D" uid="uid://d10yimqksiwrh" path="res://art/progress-bar-frame.png" id="13_yw5as"]
+
+[node name="gofish" type="Node2D"]
+position = Vector2(-11, -5)
+script = ExtResource("1_nwlh5")
+fishMoveSpeed = 3.0
+hookPull = 0.04
+
+[node name="bar1" type="Sprite2D" parent="."]
+position = Vector2(6.37501, 2.08165e-12)
+scale = Vector2(30.625, 194.75)
+texture = ExtResource("2_6jgpp")
+
+[node name="hook" type="Sprite2D" parent="."]
+modulate = Color(1, 0.678431, 0.584314, 1)
+position = Vector2(6.50001, 6.5)
+scale = Vector2(26.5, 35.5)
+texture = ExtResource("2_6jgpp")
+
+[node name="fish" type="CharacterBody2D" parent="."]
+position = Vector2(8.1056, 2.56251)
+scale = Vector2(3.59211, 3.90625)
+
+[node name="blue" type="Sprite2D" parent="fish"]
+texture = ExtResource("3_gbbhi")
+
+[node name="clown" type="Sprite2D" parent="fish"]
+texture = ExtResource("4_t0ybk")
+
+[node name="star" type="Sprite2D" parent="fish"]
+texture = ExtResource("5_fb2x5")
+
+[node name="trash" type="Sprite2D" parent="fish"]
+texture = ExtResource("6_m1wgd")
+
+[node name="axolotl" type="Sprite2D" parent="fish"]
+texture = ExtResource("7_2rn7c")
+
+[node name="gold" type="Sprite2D" parent="fish"]
+texture = ExtResource("8_y2e5g")
+
+[node name="top_pivot" type="Node2D" parent="."]
+position = Vector2(6, -189)
+
+[node name="bottom_pivot" type="Node2D" parent="."]
+position = Vector2(5, 189)
+
+[node name="bar2prog" type="TextureProgressBar" parent="."]
+offset_left = 77.0
+offset_top = 150.0
+offset_right = 377.0
+offset_bottom = 210.0
+rotation = -1.57082
+value = 50.0
+texture_under = ExtResource("4_f1jbp")
+texture_over = ExtResource("5_k15ia")
+texture_progress = ExtResource("4_f1jbp")
+tint_progress = Color(1, 0.568627, 0.647059, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="catch_msg" type="Label" parent="."]
+visible = false
+offset_left = -861.0
+offset_top = 249.0
+offset_right = -341.0
+offset_bottom = 307.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.27451, 0.403922, 1, 1)
+theme_override_fonts/font = ExtResource("11_awsde")
+theme_override_font_sizes/font_size = 40
+text = "you caught a fish! yay!!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="countdown" type="TextureProgressBar" parent="."]
+offset_left = 45.0
+offset_top = -309.0
+offset_right = 173.0
+offset_bottom = -181.0
+value = 33.0
+fill_mode = 4
+texture_under = ExtResource("12_iin33")
+texture_over = ExtResource("13_yw5as")
+texture_progress = ExtResource("12_iin33")
+tint_under = Color(0.27451, 0.403922, 1, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

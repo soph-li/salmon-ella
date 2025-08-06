@@ -1,0 +1,228 @@
+[gd_scene load_steps=25 format=3 uid="uid://bwmkvn5l67cxm"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_cjrw4"]
+[ext_resource type="Texture2D" uid="uid://2g1vh001s2op" path="res://art/animeella.png" id="2_frpj3"]
+[ext_resource type="Texture2D" uid="uid://h7741w0at72k" path="res://art/beachgift/frame_00_delay-0.2s.png" id="3_uqbst"]
+[ext_resource type="Texture2D" uid="uid://bwhpnc3wvxkbw" path="res://art/beachgift/frame_01_delay-0.2s.png" id="4_8gpt2"]
+[ext_resource type="Texture2D" uid="uid://cqqsp3ht2pvf1" path="res://art/beachgift/frame_02_delay-0.2s.png" id="5_aheq5"]
+[ext_resource type="Texture2D" uid="uid://b5frltghkm788" path="res://art/beachgift/frame_03_delay-0.2s.png" id="6_8qvum"]
+[ext_resource type="Texture2D" uid="uid://b1h307t12485v" path="res://art/beachgift/frame_04_delay-0.2s.png" id="7_bqcg6"]
+[ext_resource type="Texture2D" uid="uid://crs17bj8lu546" path="res://art/beachgift/frame_05_delay-0.2s.png" id="8_p5p58"]
+[ext_resource type="Texture2D" uid="uid://53jjgsm7dg7j" path="res://art/beachgift/frame_06_delay-0.2s.png" id="9_8njju"]
+[ext_resource type="Texture2D" uid="uid://dmqgt2q8c8775" path="res://art/beachgift/frame_08_delay-0.2s.png" id="10_n4tks"]
+[ext_resource type="Texture2D" uid="uid://dix0w37a2jahk" path="res://art/beachgift/frame_07_delay-0.2s.png" id="11_2rdin"]
+[ext_resource type="Texture2D" uid="uid://bvv5m757tge6u" path="res://art/beachgift/frame_09_delay-0.2s.png" id="12_apyfc"]
+[ext_resource type="FontFile" uid="uid://cieco37v4snpg" path="res://fonts!/PeaberryBase.ttf" id="12_xqcs6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lla3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uqbst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8gpt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aheq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8qvum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bqcg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p5p58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8njju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2rdin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n4tks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_apyfc")
+}],
+"loop": true,
+"name": &"crab",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b68bq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuw88"]
+bg_color = Color(1, 0.470588, 0.584314, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt5hx"]
+bg_color = Color(0.356863, 0.337255, 0.917647, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6mld1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ybiy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svqi5"]
+bg_color = Color(1, 0.470588, 0.584314, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du0oa"]
+bg_color = Color(0.356863, 0.337255, 0.917647, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_blvn2"]
+
+[sub_resource type="Animation" id="Animation_k3tvh"]
+resource_name = "title"
+step = 5.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g445v"]
+_data = {
+"scaleAnim": SubResource("Animation_k3tvh")
+}
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cjrw4")
+
+[node name="beachweek" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4.47, 4.47)
+sprite_frames = SubResource("SpriteFrames_lla3l")
+animation = &"crab"
+frame_progress = 0.509283
+flip_h = true
+
+[node name="playshadow" type="Label" parent="."]
+layout_mode = 2
+offset_left = -756.0
+offset_top = 243.0
+offset_right = -399.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(1, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 120
+text = "play!
+"
+
+[node name="quitshadow" type="Label" parent="."]
+layout_mode = 2
+offset_left = -750.0
+offset_top = 367.0
+offset_right = -393.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(1, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 120
+text = "quit.
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.007
+anchor_top = -0.008
+offset_left = -752.56
+offset_top = 242.64
+offset_right = -428.0
+offset_bottom = 584.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68bq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tuw88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xt5hx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6mld1")
+text = "play!
+"
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4ybiy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_svqi5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_du0oa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_blvn2")
+text = "quit."
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ella" type="Sprite2D" parent="."]
+position = Vector2(330, -43)
+scale = Vector2(6.03646, 6.03646)
+texture = ExtResource("2_frpj3")
+
+[node name="subtitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = -689.0
+offset_top = 63.0
+offset_right = -193.0
+offset_bottom = 225.0
+rotation = -0.264787
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 50
+text = "fishing,
+without risk of
+foodborne illness"
+
+[node name="myname" type="Label" parent="."]
+layout_mode = 0
+offset_left = -263.0
+offset_top = 442.0
+offset_bottom = 484.0
+rotation = -0.00331029
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 35
+text = "by Sophia Li!"
+
+[node name="title" type="Sprite2D" parent="."]
+position = Vector2(-577, -102)
+scale = Vector2(1.71669, 1.71669)
+
+[node name="title base" type="Label" parent="title"]
+modulate = Color(0.388235, 0.376471, 0.980392, 1)
+offset_left = -153.785
+offset_top = -88.5427
+offset_right = 397.215
+offset_bottom = 117.457
+rotation = -0.268809
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 100
+text = "Salmon
+  Ella!"
+
+[node name="title base2" type="Label" parent="title"]
+offset_left = -163.105
+offset_top = -92.6203
+offset_right = 387.895
+offset_bottom = 113.38
+rotation = -0.268809
+theme_override_fonts/font = ExtResource("12_xqcs6")
+theme_override_font_sizes/font_size = 100
+text = "Salmon
+  Ella!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g445v")
+}
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

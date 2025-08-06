@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0lbr5lynn7py"]
+
+[ext_resource type="Texture2D" uid="uid://ecmvrisdemt5" path="res://art/InventoryRect.png" id="1_iqd2v"]
+[ext_resource type="PackedScene" uid="uid://d2kyguqvf2tx6" path="res://scenes/slot.tscn" id="2_wpu2k"]
+
+[node name="inventory" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 90.0
+texture = ExtResource("1_iqd2v")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 89.0
+columns = 5
+
+[node name="slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_wpu2k")]
+layout_mode = 2
+
+[node name="slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_wpu2k")]
+layout_mode = 2
+
+[node name="slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_wpu2k")]
+layout_mode = 2
